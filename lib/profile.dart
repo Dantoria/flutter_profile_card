@@ -1,41 +1,38 @@
 import 'package:flutter/material.dart';
 
-class profilecard extends StatelessWidget {
-  const profilecard({super.key});
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Zaidan Mei'),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+          title: const Text(
+          'my profile',
+          style: TextStyle(
+            color: Colors.amber,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        body: Column(
+      ),
+      body: Center(
+        child: Column(
           children: [
-            Row(
-              children: [
-                Container(
-                  child: Text('nama',
-                  style: TextStyle(
-                    color: Colors.amber,
-                  ),
-                  ),
-                ),
-                Text(
-                  'Vladimir',
-                  style: TextStyle(
-                    backgroundColor: Color.fromARGB(
-                      200, 100,
-                      100,
-                      100)
-                  ),
-                )
-              ],
+            Text('Vladimir Guererro', style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
+            ),
+            Row(
+              children: <Widget>[
+                Column(),
+                Column(),
+              ],
+            )
           ],
         ),
       ),
-      debugShowCheckedModeBanner: false,
     );
-    }
+  }
 }
