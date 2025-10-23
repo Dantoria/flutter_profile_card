@@ -37,7 +37,10 @@ class ProfileCard extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      
+                    ),
                     /**
                      * 
                      */
@@ -58,6 +61,22 @@ class ProfileCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   ),
+                  Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.5,
+                              decoration: BoxDecoration(color: Colors.redAccent),
+                              child: Text('Address'))
+                          ],
+                        ),
+                      ),
+                      Column()
+                    ],
+                  )
                 ],
               ),
             )
