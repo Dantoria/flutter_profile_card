@@ -7,24 +7,20 @@ class ProfileCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-          title: const Text(
-          'my profile',
-          style: TextStyle(
-            color: Colors.amber,
-            fontWeight: FontWeight.bold,
-          ),
+        backgroundColor: Colors.redAccent,
+        title: const Text(
+          'My profile',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              width: MediaQuery.of(context).size.width,
-              height: 100,
               decoration: BoxDecoration(
-                color: Colors.amberAccent,
                 borderRadius: BorderRadius.circular(20),
+                color: Colors.amber,
                 boxShadow: [
                   BoxShadow(
                     color: Colors.redAccent,
@@ -34,55 +30,71 @@ class ProfileCard extends StatelessWidget {
                   )
                 ]
               ),
+              height: 300,
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 10,
-                      
-                    ),
-                    /**
-                     * 
-                     */
-                    child: Text(
-                      'Name', 
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: 
-                        FontWeight.bold),
-                        ),
+                      ),
+                    child: Text('NAME',
+                    style:  TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),),
                   ),
-                  SizedBox(
-                    height: 10,
+                    SizedBox(
+                      height: 10,
                     ),
                   Text(
-                    'Vladimir Guererro', style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.5,
-                              decoration: BoxDecoration(color: Colors.redAccent),
-                              child: Text('Address'))
-                          ],
-                        ),
+                    'Zaidan',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
                       ),
-                      Column()
-                    ],
-                  )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.5,
+                                decoration: BoxDecoration(
+                                  color: Colors.redAccent,
+                                  borderRadius: BorderRadius.circular(
+                                    15,
+                                    ),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text('Address'),
+                                ),
+                                ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.redAccent,
+                                  borderRadius: BorderRadius.circular(15)
+                                ),
+                                child: Text('Tempat Tanggal lahir'),
+                              ),
+                            ],
+                          ),
+                        ),
+                    ],),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
     );
-  }
+ }
 }
