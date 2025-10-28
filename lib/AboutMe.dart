@@ -1,146 +1,344 @@
 import 'package:flutter/material.dart';
 
-class Aboutme extends StatelessWidget {
-  const Aboutme({super.key});
+class AboutMe extends StatelessWidget {
+  const AboutMe({super.key});
+
+  final List<String> badgesList = const <String>[
+    '😁',
+    '😭',
+    '🤛',
+    '😁',
+    '😁',
+    '😁',
+    '😁',
+    '😁',
+    '😁',
+    '😁',
+    '😁',
+    '😁',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('About Me',
-          style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+        title: Text('About Me', style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.amberAccent,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 10.0),
+          padding: const EdgeInsets.all(8.0),
           child: Center(
             child: Column(
               children: <Widget>[
+                /**
+                 * IMAGE PROFILE
+                 */
+                //   Image.asset('assets/profile.png',
+                //   width: 100,
+                //   height: 100,
+                // ),
                 CircleAvatar(
-                  backgroundImage: NetworkImage(
-                    'assets/kereta.jpg',
+                  radius: 50,
+                  backgroundImage: NetworkImage('assets/profile.webp'),
+                ),
+                /**
+                 * TEXT NAME
+                 */
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    'Zaidan Mei'.toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'JAK ARTA',
+                    ),
                   ),
                 ),
-                Image.asset(
-                  'assets/profile.webp',
-                  width: 100,
-                  height: 100,
-                  ),
-                Text('Zaidan'.toUpperCase(), style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'JAK ARTA',
-        
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
+                /**
+                 * SPACER
+                 */
+                SizedBox(height: 10),
+                /**
+                 * TEXT ABOUT
+                 */
                 Text(
-                  'Lorem Ipsum',
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                   style: TextStyle(),
                   textAlign: TextAlign.justify,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.amberAccent,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 2,
-                    )
-                  ),
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.redAccent,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Icon(
-                          Icons.android,
-                          color: Colors.white,
-                          size: 50,
-                        ),
-                      ),
-                      Padding(
+                /**
+                 * SPACER
+                 */
+                SizedBox(height: 15),
+                /**
+                 * CARD CONTAINER ANDROID
+                 */
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Android Projects\'s', style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.greenAccent,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Icon(
+                                    Icons.gamepad,
+                                    size: 75,
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ),
-                            ),
-                            Text('10 APK')
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4.0,
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'GAME PROJECT',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text('10 Game'),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      Text('Experience')
-                    ],
-                  ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(color: Colors.black12, width: 2),
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 2,
+                                offset: Offset(2, 3),
+                                color: Colors.black,
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: <Widget>[
+                              Container(
+                                width: 75,
+                                height: 75,
+                                decoration: BoxDecoration(
+                                  color: Colors.greenAccent,
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Icon(
+                                  Icons.android,
+                                  color: Colors.white,
+                                  size: 50,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Android Project\'s',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text('10 APK'),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: Text(
-                    'schedule'.toUpperCase(),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'JAK ARTA',
-                      fontSize: 18,
-                      letterSpacing: 2,
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(color: Colors.black),
+                    child: Text(
+                      'Schedule'.toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        letterSpacing: 2,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
+                //  ROW SCHEDULE
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Text('Belajar',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'JAK ARTA'
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          // width: double.infinity ngasih lebar full
+                          decoration: BoxDecoration(
+                            color: Colors.greenAccent,
+                            borderRadius: BorderRadius.circular(20),
                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'Belajar',
+                                  style: TextStyle(fontWeight: FontWeight.w700),
+                                ),
+                                Icon(Icons.timer, size: 30),
+                                Text(
+                                  '07.30 - 14.30',
+                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
                           ),
-                        Icon(Icons.timer),
-                        Text(
-                          '7.30 - 14.30'
-                        )
-                      ],
+                        ),
+                      ),
                     ),
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          'Membaca',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'JAK ARTA'
+                    /**
+                     * MEMBACA
+                     */
+                    Expanded(
+                      flex: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.greenAccent,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'MEMBACA',
+                                  style: TextStyle(fontWeight: FontWeight.w700),
+                                ),
+                                Icon(Icons.book, size: 30),
+                                Text(
+                                  '20.00 - 21.00',
+                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                        Icon(
-                          Icons.book,
-                          size: 30,
-                        ),
-                        Text(
-                          '20.00 - 21.00',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'JAK ARTA'
+                      ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.greenAccent,
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                        )
-                      ],
-                    )
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  'TIDUR',
+                                  style: TextStyle(fontWeight: FontWeight.w700),
+                                ),
+                                Icon(Icons.bed, size: 30),
+                                Text(
+                                  '21.30 - 03.15',
+                                  style: TextStyle(fontWeight: FontWeight.w600),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
-                )
+                ),
+                SizedBox(height: 10),
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.cyanAccent,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'BADGES',
+                      style: TextStyle(
+                        fontFamily: 'JAK ARTA',
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 110,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: badgesList.map((e) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Center(
+                            child: Text(
+                              '${e}',
+                              style: TextStyle(
+                                fontSize: 60,
+                                
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+            
               ],
             ),
           ),
