@@ -18,6 +18,14 @@ class AboutMe extends StatelessWidget {
     '😁',
   ];
 
+  final List<String> imageUrls = [
+    'https://i.pinimg.com/1200x/4b/f1/a6/4bf1a616f4858f4524265b5eea433234.jpg',
+    'https://i.pinimg.com/736x/6a/14/ba/6a14ba8404419ea1a2713ac4d961897a.jpg',
+    'https://i.pinimg.com/1200x/b4/98/57/b4985767c2444bc5f8b138c7c578e79e.jpg',
+    'https://i.pinimg.com/1200x/f0/4e/a9/f04ea9c71a6c658ef0a8bf3d309dd5bd.jpg',
+    'https://i.pinimg.com/736x/90/25/35/9025358c3daf5e61de73d42289a8914f.jpg',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -338,7 +346,21 @@ class AboutMe extends StatelessWidget {
                     }).toList(),
                   ),
                 ),
-            
+                SizedBox(
+                  height: 110,
+                  child: ListView.builder(itemCount: imageUrls.length,
+                  itemBuilder: (BuildContext context, int index){
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                          '${imageUrls[index]}'
+                        ),
+                        radius: 50,
+                      ),
+                    );
+                  }),
+                )
               ],
             ),
           ),
