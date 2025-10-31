@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/detail-profile.dart';
 
 class AboutMe extends StatelessWidget {
   const AboutMe({super.key});
@@ -18,13 +19,15 @@ class AboutMe extends StatelessWidget {
     '😁',
   ];
 
-  final List<String> imageUrls = [
+  final List<String> imageUrls = const <String>[
     'https://i.pinimg.com/1200x/4b/f1/a6/4bf1a616f4858f4524265b5eea433234.jpg',
     'https://i.pinimg.com/736x/6a/14/ba/6a14ba8404419ea1a2713ac4d961897a.jpg',
     'https://i.pinimg.com/1200x/b4/98/57/b4985767c2444bc5f8b138c7c578e79e.jpg',
     'https://i.pinimg.com/1200x/f0/4e/a9/f04ea9c71a6c658ef0a8bf3d309dd5bd.jpg',
     'https://i.pinimg.com/736x/90/25/35/9025358c3daf5e61de73d42289a8914f.jpg',
   ];
+
+  var title = 'Vlad Guerreiro';
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +59,7 @@ class AboutMe extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0),
                   child: Text(
-                    'Zaidan Mei'.toUpperCase(),
+                    title.toUpperCase(),
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -186,6 +189,48 @@ class AboutMe extends StatelessWidget {
                     ),
                   ],
                 ),
+                InkWell(
+                  onTap: () {
+                    
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailProfile()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                    ),
+                  ),
+                ),
+
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailProfile(Title: title,)));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'DETAIL PROFILE'.toUpperCase()
+                      ),
+                    ),
+                  ),
+                ),
+                
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'DETAIL PROFILE',
+                    style: TextStyle(
+                      fontFamily: 'JAK ARTA',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ), 
+                  ),
+                ),
+                
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Container(
